@@ -1,25 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import InputArea from "./components/InputArea";
+import ScoreArea from "./components/ScoreArea";
+import Jumbotron from "react-bootstrap/Jumbotron"
+import { StudentScoreProvider} from "./utils/GlobalState";
+
+import Container from "react-bootstrap/Container";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <StudentScoreProvider>
+      <Container>
+        <Jumbotron>
+          <h1>GPA Calculator</h1>
+        </Jumbotron>
+        <InputArea />
+        <ScoreArea />
+      </Container>
+    </StudentScoreProvider>
   );
 }
 
